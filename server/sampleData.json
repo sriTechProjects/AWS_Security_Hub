@@ -1,0 +1,1212 @@
+
+[
+    {
+      "AwsAccountId": "123456789012",
+      "CompanyName": "ExampleCorp",
+      "Compliance": {
+        "Status": "FAILED",
+        "SecurityControlId": "RDS.1",
+        "AssociatedStandards": [
+          {
+            "StandardsId": "PCI-DSS"
+          }
+        ]
+      },
+      "CreatedAt": "2025-04-23T12:34:56Z",
+      "Description": "RDS snapshot is publicly accessible.",
+      "FindingProviderFields": {
+        "Types": [
+          "Software and Configuration Checks/AWS Security Best Practices"
+        ],
+        "Severity": {
+          "Normalized": 80,
+          "Label": "HIGH",
+          "Original": "8.0"
+        }
+      },
+      "FirstObservedAt": "2025-04-22T11:22:33Z",
+      "GeneratorId": "rds-snapshot-check",
+      "Id": "finding-001",
+      "LastObservedAt": "2025-04-23T12:34:56Z",
+      "ProcessedAt": "2025-04-23T12:35:00Z",
+      "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub",
+      "ProductFields": {
+        "RelatedAWSResources:0/name": "public-snapshot",
+        "RelatedAWSResources:0/type": "AWS::RDS::DBSnapshot",
+        "aws/securityhub/ProductName": "Security Hub",
+        "aws/securityhub/CompanyName": "AWS",
+        "Resources:0/Id": "arn:aws:rds:us-east-1:123456789012:snapshot:public-snapshot",
+        "aws/securityhub/FindingId": "finding-001"
+      },
+      "ProductName": "Security Hub",
+      "RecordState": "ACTIVE",
+      "Region": "us-east-1",
+      "Remediation": {
+        "Recommendation": {
+          "Text": "Modify the snapshot to not be publicly accessible.",
+          "Url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ModifyingSnapshotAttributes.html"
+        }
+      },
+      "Resources": [
+        {
+          "Details": {
+            "AwsRdsDbSnapshot": {
+              "Status": "available",
+              "LicenseModel": "postgresql-license",
+              "DbInstanceIdentifier": "example-db",
+              "EngineVersion": "13.3",
+              "StorageType": "gp2",
+              "InstanceCreateTime": "2025-03-15T10:00:00Z",
+              "Encrypted": false,
+              "Port": 5432,
+              "DbSnapshotIdentifier": "public-snapshot",
+              "AvailabilityZone": "us-east-1a",
+              "OptionGroupName": "default:postgres-13",
+              "PercentProgress": 100,
+              "DbiResourceId": "db-ABCDEFG1234567",
+              "AllocatedStorage": 20,
+              "SnapshotCreateTime": "2025-04-22T10:00:00Z",
+              "VpcId": "vpc-1234abcd",
+              "MasterUsername": "admin",
+              "SnapshotType": "manual",
+              "Engine": "postgres",
+              "IamDatabaseAuthenticationEnabled": false
+            }
+          },
+          "Id": "arn:aws:rds:us-east-1:123456789012:snapshot:public-snapshot",
+          "Partition": "aws",
+          "Region": "us-east-1",
+          "Type": "AwsRdsDbSnapshot"
+        }
+      ],
+      "SchemaVersion": "2018-10-08",
+      "Severity": {
+        "Label": "HIGH",
+        "Normalized": 80,
+        "Original": "8.0"
+      },
+      "Title": "RDS Snapshot is Public",
+      "Types": [
+        "Software and Configuration Checks/AWS Security Best Practices"
+      ],
+      "UpdatedAt": "2025-04-23T12:34:56Z",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "WorkflowState": "NEW"
+    },
+    {
+      "AwsAccountId": "123456789012",
+      "CompanyName": "ExampleCorp",
+      "Compliance": {
+        "Status": "FAILED",
+        "SecurityControlId": "RDS.2",
+        "AssociatedStandards": [
+          {
+            "StandardsId": "CIS-AWS-1.4"
+          }
+        ]
+      },
+      "CreatedAt": "2025-04-20T09:15:00Z",
+      "Description": "RDS instance has backup retention period set to less than 7 days.",
+      "FindingProviderFields": {
+        "Types": [
+          "Software and Configuration Checks/AWS Security Best Practices"
+        ],
+        "Severity": {
+          "Normalized": 60,
+          "Label": "MEDIUM",
+          "Original": "6.0"
+        }
+      },
+      "FirstObservedAt": "2025-04-19T08:00:00Z",
+      "GeneratorId": "rds-backup-check",
+      "Id": "finding-002",
+      "LastObservedAt": "2025-04-20T09:15:00Z",
+      "ProcessedAt": "2025-04-20T09:16:00Z",
+      "ProductArn": "arn:aws:securityhub:us-west-2::product/aws/securityhub",
+      "ProductFields": {
+        "RelatedAWSResources:0/name": "example-db",
+        "RelatedAWSResources:0/type": "AWS::RDS::DBInstance",
+        "aws/securityhub/ProductName": "Security Hub",
+        "aws/securityhub/CompanyName": "AWS",
+        "Resources:0/Id": "arn:aws:rds:us-west-2:123456789012:db:example-db",
+        "aws/securityhub/FindingId": "finding-002"
+      },
+      "ProductName": "Security Hub",
+      "RecordState": "ACTIVE",
+      "Region": "us-west-2",
+      "Remediation": {
+        "Recommendation": {
+          "Text": "Set backup retention period to at least 7 days.",
+          "Url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html"
+        }
+      },
+      "Resources": [
+        {
+          "Details": {
+            "AwsRdsDbSnapshot": {
+              "Status": "available",
+              "LicenseModel": "postgresql-license",
+              "DbInstanceIdentifier": "example-db",
+              "EngineVersion": "13.3",
+              "StorageType": "gp2",
+              "InstanceCreateTime": "2025-03-10T08:00:00Z",
+              "Encrypted": true,
+              "Port": 5432,
+              "DbSnapshotIdentifier": "backup-snapshot",
+              "AvailabilityZone": "us-west-2b",
+              "OptionGroupName": "default:postgres-13",
+              "PercentProgress": 100,
+              "DbiResourceId": "db-HIJKLMN1234567",
+              "AllocatedStorage": 20,
+              "SnapshotCreateTime": "2025-04-19T08:00:00Z",
+              "VpcId": "vpc-abcd1234",
+              "MasterUsername": "admin",
+              "SnapshotType": "automated",
+              "Engine": "postgres",
+              "IamDatabaseAuthenticationEnabled": false
+            }
+          },
+          "Id": "arn:aws:rds:us-west-2:123456789012:db:example-db",
+          "Partition": "aws",
+          "Region": "us-west-2",
+          "Type": "AwsRdsDbInstance"
+        }
+      ],
+      "SchemaVersion": "2018-10-08",
+      "Severity": {
+        "Label": "MEDIUM",
+        "Normalized": 60,
+        "Original": "6.0"
+      },
+      "Title": "RDS Backup Retention Period Less Than 7 Days",
+      "Types": [
+        "Software and Configuration Checks/AWS Security Best Practices"
+      ],
+      "UpdatedAt": "2025-04-20T09:15:00Z",
+      "Workflow": {
+        "Status": "NEW"
+      },
+      "WorkflowState": "NEW"
+    },
+    {
+        "AwsAccountId": "123456789012",
+        "CompanyName": "ExampleCorp",
+        "Compliance": {
+          "Status": "PASSED",
+          "SecurityControlId": "RDS.3",
+          "AssociatedStandards": [
+            {
+              "StandardsId": "ISO-27001"
+            }
+          ]
+        },
+        "CreatedAt": "2025-04-21T10:00:00Z",
+        "Description": "RDS snapshot is encrypted with a customer-managed KMS key.",
+        "FindingProviderFields": {
+          "Types": [
+            "TTPs/Defense Evasion"
+          ],
+          "Severity": {
+            "Normalized": 20,
+            "Label": "LOW",
+            "Original": "2.0"
+          }
+        },
+        "FirstObservedAt": "2025-04-20T09:00:00Z",
+        "GeneratorId": "rds-encryption-check",
+        "Id": "finding-003",
+        "LastObservedAt": "2025-04-21T10:00:00Z",
+        "ProcessedAt": "2025-04-21T10:01:00Z",
+        "ProductArn": "arn:aws:securityhub:us-east-2::product/aws/securityhub",
+        "ProductFields": {
+          "RelatedAWSResources:0/name": "encrypted-snapshot",
+          "RelatedAWSResources:0/type": "AWS::RDS::DBSnapshot",
+          "aws/securityhub/ProductName": "Security Hub",
+          "aws/securityhub/CompanyName": "AWS",
+          "Resources:0/Id": "arn:aws:rds:us-east-2:123456789012:snapshot:encrypted-snapshot",
+          "aws/securityhub/FindingId": "finding-003"
+        },
+        "ProductName": "Security Hub",
+        "RecordState": "ARCHIVED",
+        "Region": "us-east-2",
+        "Remediation": {
+          "Recommendation": {
+            "Text": "No remediation required as snapshot is encrypted.",
+            "Url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html"
+          }
+        },
+        "Resources": [
+          {
+            "Details": {
+              "AwsRdsDbSnapshot": {
+                "Status": "available",
+                "LicenseModel": "postgresql-license",
+                "DbInstanceIdentifier": "secure-db",
+                "EngineVersion": "14.2",
+                "StorageType": "gp2",
+                "InstanceCreateTime": "2025-03-01T12:00:00Z",
+                "Encrypted": true,
+                "Port": 5432,
+                "DbSnapshotIdentifier": "encrypted-snapshot",
+                "AvailabilityZone": "us-east-2a",
+                "OptionGroupName": "default:postgres-14",
+                "PercentProgress": 100,
+                "DbiResourceId": "db-XYZ123456789",
+                "AllocatedStorage": 25,
+                "SnapshotCreateTime": "2025-04-20T10:00:00Z",
+                "VpcId": "vpc-efgh5678",
+                "MasterUsername": "admin",
+                "SnapshotType": "manual",
+                "Engine": "postgres",
+                "IamDatabaseAuthenticationEnabled": true
+              }
+            },
+            "Id": "arn:aws:rds:us-east-2:123456789012:snapshot:encrypted-snapshot",
+            "Partition": "aws",
+            "Region": "us-east-2",
+            "Type": "AwsRdsDbSnapshot"
+          }
+        ],
+        "SchemaVersion": "2018-10-08",
+        "Severity": {
+          "Label": "LOW",
+          "Normalized": 20,
+          "Original": "2.0"
+        },
+        "Title": "RDS Snapshot Encryption Verified",
+        "Types": [
+          "TTPs/Defense Evasion"
+        ],
+        "UpdatedAt": "2025-04-21T10:00:00Z",
+        "Workflow": {
+          "Status": "RESOLVED"
+        },
+        "WorkflowState": "RESOLVED"
+      },
+      {
+        "AwsAccountId": "123456789012",
+        "CompanyName": "ExampleCorp",
+        "Compliance": {
+          "Status": "FAILED",
+          "SecurityControlId": "RDS.4",
+          "AssociatedStandards": [
+            {
+              "StandardsId": "AWS-Foundational-Security-Best-Practices"
+            }
+          ]
+        },
+        "CreatedAt": "2025-04-18T13:00:00Z",
+        "Description": "RDS instance is using the default master username.",
+        "FindingProviderFields": {
+          "Types": [
+            "TTPs/Initial Access"
+          ],
+          "Severity": {
+            "Normalized": 70,
+            "Label": "HIGH",
+            "Original": "7.0"
+          }
+        },
+        "FirstObservedAt": "2025-04-17T11:30:00Z",
+        "GeneratorId": "rds-username-check",
+        "Id": "finding-004",
+        "LastObservedAt": "2025-04-18T13:00:00Z",
+        "ProcessedAt": "2025-04-18T13:01:00Z",
+        "ProductArn": "arn:aws:securityhub:us-west-1::product/aws/securityhub",
+        "ProductFields": {
+          "RelatedAWSResources:0/name": "default-username-db",
+          "RelatedAWSResources:0/type": "AWS::RDS::DBInstance",
+          "aws/securityhub/ProductName": "Security Hub",
+          "aws/securityhub/CompanyName": "AWS",
+          "Resources:0/Id": "arn:aws:rds:us-west-1:123456789012:db:default-username-db",
+          "aws/securityhub/FindingId": "finding-004"
+        },
+        "ProductName": "Security Hub",
+        "RecordState": "ACTIVE",
+        "Region": "us-west-1",
+        "Remediation": {
+          "Recommendation": {
+            "Text": "Change the master username to a non-default value.",
+            "Url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ModifyingInstance.GUID-CB2A79BA.html"
+          }
+        },
+        "Resources": [
+          {
+            "Details": {
+              "AwsRdsDbSnapshot": {
+                "Status": "available",
+                "LicenseModel": "general-public-license",
+                "DbInstanceIdentifier": "default-username-db",
+                "EngineVersion": "12.5",
+                "StorageType": "gp2",
+                "InstanceCreateTime": "2025-02-15T10:00:00Z",
+                "Encrypted": false,
+                "Port": 5432,
+                "DbSnapshotIdentifier": "default-username-snapshot",
+                "AvailabilityZone": "us-west-1c",
+                "OptionGroupName": "default:postgres-12",
+                "PercentProgress": 100,
+                "DbiResourceId": "db-ABC987654321",
+                "AllocatedStorage": 15,
+                "SnapshotCreateTime": "2025-04-17T10:30:00Z",
+                "VpcId": "vpc-4567wxyz",
+                "MasterUsername": "admin",
+                "SnapshotType": "automated",
+                "Engine": "postgres",
+                "IamDatabaseAuthenticationEnabled": false
+              }
+            },
+            "Id": "arn:aws:rds:us-west-1:123456789012:db:default-username-db",
+            "Partition": "aws",
+            "Region": "us-west-1",
+            "Type": "AwsRdsDbInstance"
+          }
+        ],
+        "SchemaVersion": "2018-10-08",
+        "Severity": {
+          "Label": "HIGH",
+          "Normalized": 70,
+          "Original": "7.0"
+        },
+        "Title": "RDS Instance Using Default Master Username",
+        "Types": [
+          "TTPs/Initial Access"
+        ],
+        "UpdatedAt": "2025-04-18T13:00:00Z",
+        "Workflow": {
+          "Status": "NEW"
+        },
+        "WorkflowState": "NEW"
+      },
+      {
+        "AwsAccountId": "123456789012",
+        "CompanyName": "ExampleCorp",
+        "Compliance": {
+          "Status": "FAILED",
+          "SecurityControlId": "RDS.5",
+          "AssociatedStandards": [
+            {
+              "StandardsId": "NIST-800-53"
+            }
+          ]
+        },
+        "CreatedAt": "2025-04-19T07:30:00Z",
+        "Description": "RDS instance has not been patched for known vulnerabilities.",
+        "FindingProviderFields": {
+          "Types": [
+            "Vulnerabilities/System Patches"
+          ],
+          "Severity": {
+            "Normalized": 90,
+            "Label": "CRITICAL",
+            "Original": "9.0"
+          }
+        },
+        "FirstObservedAt": "2025-04-18T07:00:00Z",
+        "GeneratorId": "rds-patching-check",
+        "Id": "finding-005",
+        "LastObservedAt": "2025-04-19T07:30:00Z",
+        "ProcessedAt": "2025-04-19T07:31:00Z",
+        "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub",
+        "ProductFields": {
+          "RelatedAWSResources:0/name": "unpatched-db",
+          "RelatedAWSResources:0/type": "AWS::RDS::DBInstance",
+          "aws/securityhub/ProductName": "Security Hub",
+          "aws/securityhub/CompanyName": "AWS",
+          "Resources:0/Id": "arn:aws:rds:us-east-1:123456789012:db:unpatched-db",
+          "aws/securityhub/FindingId": "finding-005"
+        },
+        "ProductName": "Security Hub",
+        "RecordState": "ACTIVE",
+        "Region": "us-east-1",
+        "Remediation": {
+          "Recommendation": {
+            "Text": "Apply the latest patches to the RDS instance.",
+            "Url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html"
+          }
+        },
+        "Resources": [
+          {
+            "Details": {
+              "AwsRdsDbSnapshot": {
+                "Status": "available",
+                "LicenseModel": "postgresql-license",
+                "DbInstanceIdentifier": "unpatched-db",
+                "EngineVersion": "11.4",
+                "StorageType": "gp2",
+                "InstanceCreateTime": "2024-12-01T10:00:00Z",
+                "Encrypted": true,
+                "Port": 5432,
+                "DbSnapshotIdentifier": "unpatched-snapshot",
+                "AvailabilityZone": "us-east-1b",
+                "OptionGroupName": "default:postgres-11",
+                "PercentProgress": 100,
+                "DbiResourceId": "db-UNPATCH123456",
+                "AllocatedStorage": 30,
+                "SnapshotCreateTime": "2025-04-18T10:00:00Z",
+                "VpcId": "vpc-xyz98765",
+                "MasterUsername": "postgres",
+                "SnapshotType": "automated",
+                "Engine": "postgres",
+                "IamDatabaseAuthenticationEnabled": false
+              }
+            },
+            "Id": "arn:aws:rds:us-east-1:123456789012:db:unpatched-db",
+            "Partition": "aws",
+            "Region": "us-east-1",
+            "Type": "AwsRdsDbInstance"
+          }
+        ],
+        "SchemaVersion": "2018-10-08",
+        "Severity": {
+          "Label": "CRITICAL",
+          "Normalized": 90,
+          "Original": "9.0"
+        },
+        "Title": "Unpatched RDS Instance",
+        "Types": [
+          "Vulnerabilities/System Patches"
+        ],
+        "UpdatedAt": "2025-04-19T07:30:00Z",
+        "Workflow": {
+          "Status": "NEW"
+        },
+        "WorkflowState": "NEW"
+      },
+      {
+        "AwsAccountId": "123456789012",
+        "CompanyName": "ExampleCorp",
+        "Compliance": {
+          "Status": "FAILED",
+          "SecurityControlId": "S3.1",
+          "AssociatedStandards": [
+            {
+              "StandardsId": "aws-foundational-security-best-practices/v/1.0.0"
+            }
+          ]
+        },
+        "CreatedAt": "2025-04-22T14:45:00Z",
+        "Description": "S3 bucket allows public access.",
+        "FindingProviderFields": {
+          "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+          "Severity": {
+            "Normalized": 70,
+            "Label": "HIGH",
+            "Original": "High"
+          }
+        },
+        "FirstObservedAt": "2025-04-22T14:30:00Z",
+        "GeneratorId": "securityhub.amazonaws.com",
+        "Id": "finding-011",
+        "LastObservedAt": "2025-04-22T14:45:00Z",
+        "ProcessedAt": "2025-04-22T14:46:00Z",
+        "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub",
+        "ProductFields": {
+          "RelatedAWSResources:0/name": "PublicS3Bucket",
+          "RelatedAWSResources:0/type": "AWS::S3::Bucket",
+          "aws/securityhub/ProductName": "Security Hub",
+          "aws/securityhub/CompanyName": "Amazon",
+          "Resources:0/Id": "arn:aws:s3:::public-bucket",
+          "aws/securityhub/FindingId": "finding-011"
+        },
+        "ProductName": "Security Hub",
+        "RecordState": "ACTIVE",
+        "Region": "us-east-1",
+        "Remediation": {
+          "Recommendation": {
+            "Text": "Edit the S3 bucket policy to restrict public access.",
+            "Url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html"
+          }
+        },
+        "Resources": [
+          {
+            "Details": {
+              "AwsRdsDbSnapshot": {
+                "Status": "available",
+                "LicenseModel": "general-public-license",
+                "DbInstanceIdentifier": "db-instance-01",
+                "EngineVersion": "13.3",
+                "StorageType": "gp2",
+                "InstanceCreateTime": "2025-03-01T10:00:00Z",
+                "Encrypted": true,
+                "Port": 5432,
+                "DbSnapshotIdentifier": "snapshot-011",
+                "AvailabilityZone": "us-east-1a",
+                "OptionGroupName": "default:postgres-13",
+                "PercentProgress": 100,
+                "DbiResourceId": "dbi-011",
+                "AllocatedStorage": 20,
+                "SnapshotCreateTime": "2025-04-20T09:00:00Z",
+                "VpcId": "vpc-011",
+                "MasterUsername": "admin",
+                "SnapshotType": "manual",
+                "Engine": "postgres",
+                "IamDatabaseAuthenticationEnabled": false
+              }
+            },
+            "Id": "arn:aws:rds:us-east-1:123456789012:snapshot:snapshot-011",
+            "Partition": "aws",
+            "Region": "us-east-1",
+            "Type": "AwsRdsDbSnapshot"
+          }
+        ],
+        "SchemaVersion": "2018-10-08",
+        "Severity": {
+          "Label": "HIGH",
+          "Normalized": 70,
+          "Original": "High"
+        },
+        "Title": "S3 bucket allows public access",
+        "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+        "UpdatedAt": "2025-04-22T14:45:30Z",
+        "Workflow": {
+          "Status": "NEW"
+        },
+        "WorkflowState": "NEW"
+      },
+    
+      {
+        "AwsAccountId": "123456789012",
+        "CompanyName": "CloudTech",
+        "Compliance": {
+          "Status": "PASSED",
+          "SecurityControlId": "IAM.4",
+          "AssociatedStandards": [
+            {
+              "StandardsId": "cis-aws-foundations-benchmark/v/1.2.0"
+            }
+          ]
+        },
+        "CreatedAt": "2025-04-21T12:00:00Z",
+        "Description": "No IAM users with console access found.",
+        "FindingProviderFields": {
+          "Types": ["Software and Configuration Checks"],
+          "Severity": {
+            "Normalized": 10,
+            "Label": "INFORMATIONAL",
+            "Original": "Informational"
+          }
+        },
+        "FirstObservedAt": "2025-04-20T11:50:00Z",
+        "GeneratorId": "securityhub.amazonaws.com",
+        "Id": "finding-012",
+        "LastObservedAt": "2025-04-21T12:00:00Z",
+        "ProcessedAt": "2025-04-21T12:01:00Z",
+        "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub",
+        "ProductFields": {
+          "RelatedAWSResources:0/name": "IAM",
+          "RelatedAWSResources:0/type": "AWS::IAM::User",
+          "aws/securityhub/ProductName": "Security Hub",
+          "aws/securityhub/CompanyName": "Amazon",
+          "Resources:0/Id": "arn:aws:iam::123456789012:user/Alice",
+          "aws/securityhub/FindingId": "finding-012"
+        },
+        "ProductName": "Security Hub",
+        "RecordState": "ARCHIVED",
+        "Region": "us-east-1",
+        "Remediation": {
+          "Recommendation": {
+            "Text": "No action needed. Finding passed.",
+            "Url": ""
+          }
+        },
+        "Resources": [
+          {
+            "Details": {
+              "AwsRdsDbSnapshot": {
+                "Status": "available",
+                "LicenseModel": "general-public-license",
+                "DbInstanceIdentifier": "db-instance-02",
+                "EngineVersion": "12.4",
+                "StorageType": "gp2",
+                "InstanceCreateTime": "2025-02-15T10:00:00Z",
+                "Encrypted": false,
+                "Port": 5432,
+                "DbSnapshotIdentifier": "snapshot-012",
+                "AvailabilityZone": "us-east-1b",
+                "OptionGroupName": "default:postgres-12",
+                "PercentProgress": 100,
+                "DbiResourceId": "dbi-012",
+                "AllocatedStorage": 15,
+                "SnapshotCreateTime": "2025-04-18T08:00:00Z",
+                "VpcId": "vpc-012",
+                "MasterUsername": "dbadmin",
+                "SnapshotType": "automated",
+                "Engine": "postgres",
+                "IamDatabaseAuthenticationEnabled": false
+              }
+            },
+            "Id": "arn:aws:rds:us-east-1:123456789012:snapshot:snapshot-012",
+            "Partition": "aws",
+            "Region": "us-east-1",
+            "Type": "AwsRdsDbSnapshot"
+          }
+        ],
+        "SchemaVersion": "2018-10-08",
+        "Severity": {
+          "Label": "INFORMATIONAL",
+          "Normalized": 10,
+          "Original": "Informational"
+        },
+        "Title": "No IAM users with console access",
+        "Types": ["Software and Configuration Checks"],
+        "UpdatedAt": "2025-04-21T12:00:30Z",
+        "Workflow": {
+          "Status": "RESOLVED"
+        },
+        "WorkflowState": "RESOLVED"
+      },
+    
+      {
+        "AwsAccountId": "123456789012",
+        "CompanyName": "SecureCloud",
+        "Compliance": {
+          "Status": "FAILED",
+          "SecurityControlId": "EC2.3",
+          "AssociatedStandards": [
+            {
+              "StandardsId": "aws-foundational-security-best-practices/v/1.0.0"
+            }
+          ]
+        },
+        "CreatedAt": "2025-04-23T08:00:00Z",
+        "Description": "EC2 instance is using an outdated AMI.",
+        "FindingProviderFields": {
+          "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+          "Severity": {
+            "Normalized": 50,
+            "Label": "MEDIUM",
+            "Original": "Medium"
+          }
+        },
+        "FirstObservedAt": "2025-04-23T07:50:00Z",
+        "GeneratorId": "securityhub.amazonaws.com",
+        "Id": "finding-013",
+        "LastObservedAt": "2025-04-23T08:00:00Z",
+        "ProcessedAt": "2025-04-23T08:01:00Z",
+        "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub",
+        "ProductFields": {
+          "RelatedAWSResources:0/name": "OutdatedAMIInstance",
+          "RelatedAWSResources:0/type": "AWS::EC2::Instance",
+          "aws/securityhub/ProductName": "Security Hub",
+          "aws/securityhub/CompanyName": "Amazon",
+          "Resources:0/Id": "arn:aws:ec2:us-east-1:123456789012:instance/i-0987654321abcdef0",
+          "aws/securityhub/FindingId": "finding-013"
+        },
+        "ProductName": "Security Hub",
+        "RecordState": "ACTIVE",
+        "Region": "us-east-1",
+        "Remediation": {
+          "Recommendation": {
+            "Text": "Update the AMI to a more recent version.",
+            "Url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html"
+          }
+        },
+        "Resources": [
+          {
+            "Details": {
+              "AwsRdsDbSnapshot": {
+                "Status": "available",
+                "LicenseModel": "general-public-license",
+                "DbInstanceIdentifier": "db-instance-03",
+                "EngineVersion": "11.8",
+                "StorageType": "standard",
+                "InstanceCreateTime": "2025-01-10T08:00:00Z",
+                "Encrypted": false,
+                "Port": 5432,
+                "DbSnapshotIdentifier": "snapshot-013",
+                "AvailabilityZone": "us-east-1c",
+                "OptionGroupName": "default:postgres-11",
+                "PercentProgress": 100,
+                "DbiResourceId": "dbi-013",
+                "AllocatedStorage": 10,
+                "SnapshotCreateTime": "2025-04-20T07:30:00Z",
+                "VpcId": "vpc-013",
+                "MasterUsername": "rootuser",
+                "SnapshotType": "manual",
+                "Engine": "postgres",
+                "IamDatabaseAuthenticationEnabled": false
+              }
+            },
+            "Id": "arn:aws:rds:us-east-1:123456789012:snapshot:snapshot-013",
+            "Partition": "aws",
+            "Region": "us-east-1",
+            "Type": "AwsRdsDbSnapshot"
+          }
+        ],
+        "SchemaVersion": "2018-10-08",
+        "Severity": {
+          "Label": "MEDIUM",
+          "Normalized": 50,
+          "Original": "Medium"
+        },
+        "Title": "EC2 instance is using an outdated AMI",
+        "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+        "UpdatedAt": "2025-04-23T08:00:30Z",
+        "Workflow": {
+          "Status": "NEW"
+        },
+        "WorkflowState": "NEW"
+      },
+      {
+        "AwsAccountId": "123456789012",
+        "CompanyName": "NetSecure",
+        "Compliance": {
+          "Status": "FAILED",
+          "SecurityControlId": "VPC.4",
+          "AssociatedStandards": [
+            {
+              "StandardsId": "aws-foundational-security-best-practices/v/1.0.0"
+            }
+          ]
+        },
+        "CreatedAt": "2025-04-23T15:00:00Z",
+        "Description": "VPC security group allows unrestricted SSH access.",
+        "FindingProviderFields": {
+          "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+          "Severity": {
+            "Normalized": 80,
+            "Label": "CRITICAL",
+            "Original": "Critical"
+          }
+        },
+        "FirstObservedAt": "2025-04-23T14:45:00Z",
+        "GeneratorId": "securityhub.amazonaws.com",
+        "Id": "finding-014",
+        "LastObservedAt": "2025-04-23T15:00:00Z",
+        "ProcessedAt": "2025-04-23T15:01:00Z",
+        "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub",
+        "ProductFields": {
+          "RelatedAWSResources:0/name": "OpenSSHGroup",
+          "RelatedAWSResources:0/type": "AWS::EC2::SecurityGroup",
+          "aws/securityhub/ProductName": "Security Hub",
+          "aws/securityhub/CompanyName": "Amazon",
+          "Resources:0/Id": "arn:aws:ec2:us-east-1:123456789012:security-group/sg-0abcd1234",
+          "aws/securityhub/FindingId": "finding-014"
+        },
+        "ProductName": "Security Hub",
+        "RecordState": "ACTIVE",
+        "Region": "us-east-1",
+        "Remediation": {
+          "Recommendation": {
+            "Text": "Restrict SSH access to known IP addresses only.",
+            "Url": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html"
+          }
+        },
+        "Resources": [
+          {
+            "Details": {
+              "AwsRdsDbSnapshot": {
+                "Status": "available",
+                "LicenseModel": "general-public-license",
+                "DbInstanceIdentifier": "db-instance-04",
+                "EngineVersion": "14.2",
+                "StorageType": "gp2",
+                "InstanceCreateTime": "2025-03-15T09:00:00Z",
+                "Encrypted": true,
+                "Port": 5432,
+                "DbSnapshotIdentifier": "snapshot-014",
+                "AvailabilityZone": "us-east-1d",
+                "OptionGroupName": "default:postgres-14",
+                "PercentProgress": 100,
+                "DbiResourceId": "dbi-014",
+                "AllocatedStorage": 30,
+                "SnapshotCreateTime": "2025-04-21T08:00:00Z",
+                "VpcId": "vpc-014",
+                "MasterUsername": "netadmin",
+                "SnapshotType": "manual",
+                "Engine": "postgres",
+                "IamDatabaseAuthenticationEnabled": true
+              }
+            },
+            "Id": "arn:aws:rds:us-east-1:123456789012:snapshot:snapshot-014",
+            "Partition": "aws",
+            "Region": "us-east-1",
+            "Type": "AwsRdsDbSnapshot"
+          }
+        ],
+        "SchemaVersion": "2018-10-08",
+        "Severity": {
+          "Label": "CRITICAL",
+          "Normalized": 80,
+          "Original": "Critical"
+        },
+        "Title": "VPC security group allows unrestricted SSH access",
+        "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+        "UpdatedAt": "2025-04-23T15:00:30Z",
+        "Workflow": {
+          "Status": "NEW"
+        },
+        "WorkflowState": "NEW"
+      },
+    
+      {
+        "AwsAccountId": "123456789012",
+        "CompanyName": "AppGuard",
+        "Compliance": {
+          "Status": "FAILED",
+          "SecurityControlId": "CloudTrail.1",
+          "AssociatedStandards": [
+            {
+              "StandardsId": "aws-foundational-security-best-practices/v/1.0.0"
+            }
+          ]
+        },
+        "CreatedAt": "2025-04-23T16:30:00Z",
+        "Description": "CloudTrail is not enabled in all regions.",
+        "FindingProviderFields": {
+          "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+          "Severity": {
+            "Normalized": 60,
+            "Label": "MEDIUM",
+            "Original": "Medium"
+          }
+        },
+        "FirstObservedAt": "2025-04-23T16:00:00Z",
+        "GeneratorId": "securityhub.amazonaws.com",
+        "Id": "finding-015",
+        "LastObservedAt": "2025-04-23T16:30:00Z",
+        "ProcessedAt": "2025-04-23T16:31:00Z",
+        "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub",
+        "ProductFields": {
+          "RelatedAWSResources:0/name": "CloudTrailTracker",
+          "RelatedAWSResources:0/type": "AWS::CloudTrail::Trail",
+          "aws/securityhub/ProductName": "Security Hub",
+          "aws/securityhub/CompanyName": "Amazon",
+          "Resources:0/Id": "arn:aws:cloudtrail:us-east-1:123456789012:trail/global-trail",
+          "aws/securityhub/FindingId": "finding-015"
+        },
+        "ProductName": "Security Hub",
+        "RecordState": "ACTIVE",
+        "Region": "us-east-1",
+        "Remediation": {
+          "Recommendation": {
+            "Text": "Enable CloudTrail in all regions.",
+            "Url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html"
+          }
+        },
+        "Resources": [
+          {
+            "Details": {
+              "AwsRdsDbSnapshot": {
+                "Status": "available",
+                "LicenseModel": "general-public-license",
+                "DbInstanceIdentifier": "db-instance-05",
+                "EngineVersion": "13.1",
+                "StorageType": "gp2",
+                "InstanceCreateTime": "2025-03-10T07:30:00Z",
+                "Encrypted": true,
+                "Port": 5432,
+                "DbSnapshotIdentifier": "snapshot-015",
+                "AvailabilityZone": "us-east-1a",
+                "OptionGroupName": "default:postgres-13",
+                "PercentProgress": 100,
+                "DbiResourceId": "dbi-015",
+                "AllocatedStorage": 25,
+                "SnapshotCreateTime": "2025-04-20T07:00:00Z",
+                "VpcId": "vpc-015",
+                "MasterUsername": "cloudadmin",
+                "SnapshotType": "automated",
+                "Engine": "postgres",
+                "IamDatabaseAuthenticationEnabled": false
+              }
+            },
+            "Id": "arn:aws:rds:us-east-1:123456789012:snapshot:snapshot-015",
+            "Partition": "aws",
+            "Region": "us-east-1",
+            "Type": "AwsRdsDbSnapshot"
+          }
+        ],
+        "SchemaVersion": "2018-10-08",
+        "Severity": {
+          "Label": "MEDIUM",
+          "Normalized": 60,
+          "Original": "Medium"
+        },
+        "Title": "CloudTrail not enabled in all regions",
+        "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+        "UpdatedAt": "2025-04-23T16:30:30Z",
+        "Workflow": {
+          "Status": "NEW"
+        },
+        "WorkflowState": "NEW"
+      },
+      {
+        "AwsAccountId": "123456789012",
+        "CompanyName": "SecureCloud",
+        "Compliance": {
+          "Status": "FAILED",
+          "SecurityControlId": "IAM.1",
+          "AssociatedStandards": [
+            {
+              "StandardsId": "aws-foundational-security-best-practices/v/1.0.0"
+            }
+          ]
+        },
+        "CreatedAt": "2025-04-24T08:00:00Z",
+        "Description": "Root account has active access keys.",
+        "FindingProviderFields": {
+          "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+          "Severity": {
+            "Normalized": 90,
+            "Label": "CRITICAL",
+            "Original": "Critical"
+          }
+        },
+        "FirstObservedAt": "2025-04-24T07:45:00Z",
+        "GeneratorId": "securityhub.amazonaws.com",
+        "Id": "finding-016",
+        "LastObservedAt": "2025-04-24T08:00:00Z",
+        "ProcessedAt": "2025-04-24T08:01:00Z",
+        "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub",
+        "ProductFields": {
+          "RelatedAWSResources:0/name": "RootUserAccessKeys",
+          "RelatedAWSResources:0/type": "AWS::IAM::User",
+          "aws/securityhub/ProductName": "Security Hub",
+          "aws/securityhub/CompanyName": "Amazon",
+          "Resources:0/Id": "arn:aws:iam::123456789012:root",
+          "aws/securityhub/FindingId": "finding-016"
+        },
+        "ProductName": "Security Hub",
+        "RecordState": "ACTIVE",
+        "Region": "us-east-1",
+        "Remediation": {
+          "Recommendation": {
+            "Text": "Remove access keys from the root account.",
+            "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html"
+          }
+        },
+        "Resources": [
+          {
+            "Details": {
+              "AwsRdsDbSnapshot": {
+                "Status": "available",
+                "LicenseModel": "general-public-license",
+                "DbInstanceIdentifier": "db-instance-06",
+                "EngineVersion": "14.0",
+                "StorageType": "gp2",
+                "InstanceCreateTime": "2025-02-10T09:00:00Z",
+                "Encrypted": true,
+                "Port": 5432,
+                "DbSnapshotIdentifier": "snapshot-016",
+                "AvailabilityZone": "us-east-1a",
+                "OptionGroupName": "default:postgres-14",
+                "PercentProgress": 100,
+                "DbiResourceId": "dbi-016",
+                "AllocatedStorage": 20,
+                "SnapshotCreateTime": "2025-04-22T08:00:00Z",
+                "VpcId": "vpc-016",
+                "MasterUsername": "admin",
+                "SnapshotType": "manual",
+                "Engine": "postgres",
+                "IamDatabaseAuthenticationEnabled": true
+              }
+            },
+            "Id": "arn:aws:rds:us-east-1:123456789012:snapshot:snapshot-016",
+            "Partition": "aws",
+            "Region": "us-east-1",
+            "Type": "AwsRdsDbSnapshot"
+          }
+        ],
+        "SchemaVersion": "2018-10-08",
+        "Severity": {
+          "Label": "CRITICAL",
+          "Normalized": 90,
+          "Original": "Critical"
+        },
+        "Title": "Root account has active access keys",
+        "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+        "UpdatedAt": "2025-04-24T08:00:30Z",
+        "Workflow": {
+          "Status": "NEW"
+        },
+        "WorkflowState": "NEW"
+      },
+    
+      {
+        "AwsAccountId": "123456789012",
+        "CompanyName": "DataVault",
+        "Compliance": {
+          "Status": "FAILED",
+          "SecurityControlId": "S3.2",
+          "AssociatedStandards": [
+            {
+              "StandardsId": "aws-foundational-security-best-practices/v/1.0.0"
+            }
+          ]
+        },
+        "CreatedAt": "2025-04-24T09:10:00Z",
+        "Description": "S3 bucket allows public access.",
+        "FindingProviderFields": {
+          "Types": ["TTPs/Initial Access/Publicly Exposed Resource"],
+          "Severity": {
+            "Normalized": 70,
+            "Label": "HIGH",
+            "Original": "High"
+          }
+        },
+        "FirstObservedAt": "2025-04-24T09:00:00Z",
+        "GeneratorId": "securityhub.amazonaws.com",
+        "Id": "finding-017",
+        "LastObservedAt": "2025-04-24T09:10:00Z",
+        "ProcessedAt": "2025-04-24T09:11:00Z",
+        "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub",
+        "ProductFields": {
+          "RelatedAWSResources:0/name": "public-bucket",
+          "RelatedAWSResources:0/type": "AWS::S3::Bucket",
+          "aws/securityhub/ProductName": "Security Hub",
+          "aws/securityhub/CompanyName": "Amazon",
+          "Resources:0/Id": "arn:aws:s3:::public-bucket",
+          "aws/securityhub/FindingId": "finding-017"
+        },
+        "ProductName": "Security Hub",
+        "RecordState": "ACTIVE",
+        "Region": "us-east-1",
+        "Remediation": {
+          "Recommendation": {
+            "Text": "Block all public access to S3 bucket.",
+            "Url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html"
+          }
+        },
+        "Resources": [
+          {
+            "Details": {
+              "AwsRdsDbSnapshot": {
+                "Status": "available",
+                "LicenseModel": "general-public-license",
+                "DbInstanceIdentifier": "db-instance-07",
+                "EngineVersion": "12.8",
+                "StorageType": "gp2",
+                "InstanceCreateTime": "2025-03-01T08:00:00Z",
+                "Encrypted": false,
+                "Port": 5432,
+                "DbSnapshotIdentifier": "snapshot-017",
+                "AvailabilityZone": "us-east-1c",
+                "OptionGroupName": "default:postgres-12",
+                "PercentProgress": 100,
+                "DbiResourceId": "dbi-017",
+                "AllocatedStorage": 15,
+                "SnapshotCreateTime": "2025-04-20T07:00:00Z",
+                "VpcId": "vpc-017",
+                "MasterUsername": "datavault",
+                "SnapshotType": "automated",
+                "Engine": "postgres",
+                "IamDatabaseAuthenticationEnabled": false
+              }
+            },
+            "Id": "arn:aws:rds:us-east-1:123456789012:snapshot:snapshot-017",
+            "Partition": "aws",
+            "Region": "us-east-1",
+            "Type": "AwsRdsDbSnapshot"
+          }
+        ],
+        "SchemaVersion": "2018-10-08",
+        "Severity": {
+          "Label": "HIGH",
+          "Normalized": 70,
+          "Original": "High"
+        },
+        "Title": "S3 bucket allows public access",
+        "Types": ["TTPs/Initial Access/Publicly Exposed Resource"],
+        "UpdatedAt": "2025-04-24T09:10:30Z",
+        "Workflow": {
+          "Status": "NEW"
+        },
+        "WorkflowState": "NEW"
+      },
+    
+      {
+        "AwsAccountId": "123456789012",
+        "CompanyName": "AppShield",
+        "Compliance": {
+          "Status": "PASSED",
+          "SecurityControlId": "EBS.2",
+          "AssociatedStandards": [
+            {
+              "StandardsId": "aws-foundational-security-best-practices/v/1.0.0"
+            }
+          ]
+        },
+        "CreatedAt": "2025-04-24T10:00:00Z",
+        "Description": "EBS volumes are encrypted.",
+        "FindingProviderFields": {
+          "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+          "Severity": {
+            "Normalized": 0,
+            "Label": "INFORMATIONAL",
+            "Original": "Informational"
+          }
+        },
+        "FirstObservedAt": "2025-04-24T09:45:00Z",
+        "GeneratorId": "securityhub.amazonaws.com",
+        "Id": "finding-018",
+        "LastObservedAt": "2025-04-24T10:00:00Z",
+        "ProcessedAt": "2025-04-24T10:01:00Z",
+        "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub",
+        "ProductFields": {
+          "RelatedAWSResources:0/name": "EncryptedEBSVolume",
+          "RelatedAWSResources:0/type": "AWS::EC2::Volume",
+          "aws/securityhub/ProductName": "Security Hub",
+          "aws/securityhub/CompanyName": "Amazon",
+          "Resources:0/Id": "arn:aws:ec2:us-east-1:123456789012:volume/vol-018",
+          "aws/securityhub/FindingId": "finding-018"
+        },
+        "ProductName": "Security Hub",
+        "RecordState": "ARCHIVED",
+        "Region": "us-east-1",
+        "Remediation": {
+          "Recommendation": {
+            "Text": "No action required.",
+            "Url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
+          }
+        },
+        "Resources": [
+          {
+            "Details": {
+              "AwsRdsDbSnapshot": {
+                "Status": "available",
+                "LicenseModel": "general-public-license",
+                "DbInstanceIdentifier": "db-instance-08",
+                "EngineVersion": "15.0",
+                "StorageType": "gp3",
+                "InstanceCreateTime": "2025-03-25T08:00:00Z",
+                "Encrypted": true,
+                "Port": 5432,
+                "DbSnapshotIdentifier": "snapshot-018",
+                "AvailabilityZone": "us-east-1f",
+                "OptionGroupName": "default:postgres-15",
+                "PercentProgress": 100,
+                "DbiResourceId": "dbi-018",
+                "AllocatedStorage": 50,
+                "SnapshotCreateTime": "2025-04-23T08:00:00Z",
+                "VpcId": "vpc-018",
+                "MasterUsername": "shieldadmin",
+                "SnapshotType": "manual",
+                "Engine": "postgres",
+                "IamDatabaseAuthenticationEnabled": true
+              }
+            },
+            "Id": "arn:aws:rds:us-east-1:123456789012:snapshot:snapshot-018",
+            "Partition": "aws",
+            "Region": "us-east-1",
+            "Type": "AwsRdsDbSnapshot"
+          }
+        ],
+        "SchemaVersion": "2018-10-08",
+        "Severity": {
+          "Label": "INFORMATIONAL",
+          "Normalized": 0,
+          "Original": "Informational"
+        },
+        "Title": "All EBS volumes are encrypted",
+        "Types": ["Software and Configuration Checks/AWS Security Best Practices"],
+        "UpdatedAt": "2025-04-24T10:00:30Z",
+        "Workflow": {
+          "Status": "RESOLVED"
+        },
+        "WorkflowState": "RESOLVED"
+      }
+  ]
+  

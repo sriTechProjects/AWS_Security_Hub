@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors'); // import cors
 const findingsRoutes = require('./routes/security_hub.js');
 
 dotenv.config();
@@ -7,7 +8,8 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-// Use findings routes
+app.use(cors());
+
 app.use('/security-hub/api', findingsRoutes);
 
 const PORT = 4000;

@@ -1,0 +1,842 @@
+[
+    {
+      "id": "IAM.1",
+      "title": "Encrypt EBS volumes",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "IAM.2",
+      "title": "Enable MFA for root account",
+      "status": "PASSED",
+      "severity": "Critical",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "IAM.3",
+      "title": "Remove unused IAM credentials",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "IAM.4",
+      "title": "Rotate access keys regularly",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "IAM.5",
+      "title": "Configure strong password policy",
+      "status": "PASSED",
+      "severity": "High",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "SEC.1",
+      "title": "Enable CloudTrail in all regions",
+      "status": "FAILED",
+      "severity": "Critical",
+      "failedChecks": 5,
+      "customParameters": "-"
+    },
+    {
+      "id": "SEC.2",
+      "title": "Enable CloudTrail log file validation",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "SEC.3",
+      "title": "Ensure CloudTrail logs are encrypted",
+      "status": "PASSED",
+      "severity": "High",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "SEC.4",
+      "title": "Enable CloudWatch logs integration",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "SEC.5",
+      "title": "Configure S3 bucket access logging",
+      "status": "WARNING",
+      "severity": "Low",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "NET.1",
+      "title": "Avoid using default VPC",
+      "status": "FAILED",
+      "severity": "Low",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "NET.2",
+      "title": "Restrict security group rules",
+      "status": "WARNING",
+      "severity": "High",
+      "failedChecks": 4,
+      "customParameters": "-"
+    },
+    {
+      "id": "NET.3",
+      "title": "Enable VPC flow logs",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "NET.4",
+      "title": "Use private subnets for resources",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "NET.5",
+      "title": "Implement network ACLs",
+      "status": "PASSED",
+      "severity": "Low",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "S3.1",
+      "title": "Enable S3 bucket encryption",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 7,
+      "customParameters": "-"
+    },
+    {
+      "id": "S3.2",
+      "title": "Block public access to S3 buckets",
+      "status": "WARNING",
+      "severity": "Critical",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "S3.3",
+      "title": "Enable versioning for S3 buckets",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "S3.4",
+      "title": "Enforce SSL for S3 buckets",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "S3.5",
+      "title": "Use lifecycle policies for S3",
+      "status": "WARNING",
+      "severity": "Low",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "EC2.1",
+      "title": "Enable detailed monitoring",
+      "status": "FAILED",
+      "severity": "Low",
+      "failedChecks": 5,
+      "customParameters": "-"
+    },
+    {
+      "id": "EC2.2",
+      "title": "Use IMDSv2 on all instances",
+      "status": "WARNING",
+      "severity": "High",
+      "failedChecks": 8,
+      "customParameters": "-"
+    },
+    {
+      "id": "EC2.3",
+      "title": "Enable termination protection",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "EC2.4",
+      "title": "Use encrypted AMIs",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 4,
+      "customParameters": "-"
+    },
+    {
+      "id": "EC2.5",
+      "title": "Tag all EC2 resources",
+      "status": "WARNING",
+      "severity": "Low",
+      "failedChecks": 12,
+      "customParameters": "-"
+    },
+    {
+      "id": "RDS.1",
+      "title": "Enable RDS encryption",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "RDS.2",
+      "title": "Enable automated backups",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "RDS.3",
+      "title": "Use multi-AZ deployment",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "RDS.4",
+      "title": "Disable public accessibility",
+      "status": "FAILED",
+      "severity": "Critical",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "RDS.5",
+      "title": "Enable deletion protection",
+      "status": "PASSED",
+      "severity": "Low",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "CFG.1",
+      "title": "Enable AWS Config",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "CFG.2",
+      "title": "Configure Config recorder",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "CFG.3",
+      "title": "Enable Config in all regions",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "CFG.4",
+      "title": "Record all resource types",
+      "status": "FAILED",
+      "severity": "Low",
+      "failedChecks": 4,
+      "customParameters": "-"
+    },
+    {
+      "id": "CFG.5",
+      "title": "Enable Config delivery channel",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "KMS.1",
+      "title": "Enable key rotation",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "KMS.2",
+      "title": "Use customer managed keys",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "KMS.3",
+      "title": "Monitor KMS key usage",
+      "status": "WARNING",
+      "severity": "Low",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "KMS.4",
+      "title": "Restrict KMS key policies",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 5,
+      "customParameters": "-"
+    },
+    {
+      "id": "KMS.5",
+      "title": "Enable CloudTrail for key events",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "LAM.1",
+      "title": "Set Lambda function timeouts",
+      "status": "FAILED",
+      "severity": "Low",
+      "failedChecks": 8,
+      "customParameters": "-"
+    },
+    {
+      "id": "LAM.2",
+      "title": "Configure Lambda execution roles",
+      "status": "WARNING",
+      "severity": "High",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "LAM.3",
+      "title": "Deploy Lambda in VPC",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "LAM.4",
+      "title": "Enable Lambda X-Ray tracing",
+      "status": "FAILED",
+      "severity": "Low",
+      "failedChecks": 6,
+      "customParameters": "-"
+    },
+    {
+      "id": "LAM.5",
+      "title": "Implement Lambda error handling",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "CLD.1",
+      "title": "Enable CloudWatch alarms",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 7,
+      "customParameters": "-"
+    },
+    {
+      "id": "CLD.2",
+      "title": "Configure metric filters",
+      "status": "PASSED",
+      "severity": "Low",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "CLD.3",
+      "title": "Set up log retention",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 4,
+      "customParameters": "-"
+    },
+    {
+      "id": "CLD.4",
+      "title": "Enable CloudWatch Insights",
+      "status": "FAILED",
+      "severity": "Low",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "CLD.5",
+      "title": "Configure dashboards",
+      "status": "PASSED",
+      "severity": "Low",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "GRD.1",
+      "title": "Enable GuardDuty",
+      "status": "FAILED",
+      "severity": "Critical",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "GRD.2",
+      "title": "Configure finding notifications",
+      "status": "WARNING",
+      "severity": "High",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "GRD.3",
+      "title": "Enable in all regions",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "GRD.4",
+      "title": "Review GuardDuty findings",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "GRD.5",
+      "title": "Configure trusted IP lists",
+      "status": "WARNING",
+      "severity": "Low",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "DNS.1",
+      "title": "Enable Route 53 query logging",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "DNS.2",
+      "title": "Configure DNSSEC",
+      "status": "PASSED",
+      "severity": "High",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "DNS.3",
+      "title": "Set up health checks",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "DNS.4",
+      "title": "Configure failover routing",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "DNS.5",
+      "title": "Implement private hosted zones",
+      "status": "PASSED",
+      "severity": "Low",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "BAK.1",
+      "title": "Configure backup plans",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 4,
+      "customParameters": "-"
+    },
+    {
+      "id": "BAK.2",
+      "title": "Set retention periods",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "BAK.3",
+      "title": "Enable cross-region backup",
+      "status": "PASSED",
+      "severity": "High",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "BAK.4",
+      "title": "Schedule regular backups",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "BAK.5",
+      "title": "Test backup restoration",
+      "status": "WARNING",
+      "severity": "Critical",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "ORG.1",
+      "title": "Set up AWS Organizations",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "ORG.2",
+      "title": "Configure service control policies",
+      "status": "PASSED",
+      "severity": "High",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "ORG.3",
+      "title": "Enable organizational trail",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "ORG.4",
+      "title": "Implement organizational units",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "ORG.5",
+      "title": "Configure tag policies",
+      "status": "PASSED",
+      "severity": "Low",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "CTR.1",
+      "title": "Implement cost allocation tags",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 5,
+      "customParameters": "-"
+    },
+    {
+      "id": "CTR.2",
+      "title": "Set up budgets",
+      "status": "WARNING",
+      "severity": "High",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "CTR.3",
+      "title": "Enable detailed billing reports",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "CTR.4",
+      "title": "Configure cost anomaly detection",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "CTR.5",
+      "title": "Review rightsizing recommendations",
+      "status": "WARNING",
+      "severity": "Low",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "WAF.1",
+      "title": "Configure WAF rules",
+      "status": "FAILED",
+      "severity": "Critical",
+      "failedChecks": 6,
+      "customParameters": "-"
+    },
+    {
+      "id": "WAF.2",
+      "title": "Set up IP blocking",
+      "status": "PASSED",
+      "severity": "High",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "WAF.3",
+      "title": "Enable logging",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "WAF.4",
+      "title": "Implement rate limiting",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 4,
+      "customParameters": "-"
+    },
+    {
+      "id": "WAF.5",
+      "title": "Configure bot control",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "ELB.1",
+      "title": "Enable access logs",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "ELB.2",
+      "title": "Configure SSL policies",
+      "status": "WARNING",
+      "severity": "Critical",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "ELB.3",
+      "title": "Implement health checks",
+      "status": "PASSED",
+      "severity": "High",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "ELB.4",
+      "title": "Enable deletion protection",
+      "status": "FAILED",
+      "severity": "Low",
+      "failedChecks": 5,
+      "customParameters": "-"
+    },
+    {
+      "id": "ELB.5",
+      "title": "Configure cross-zone load balancing",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "API.1",
+      "title": "Enable API Gateway logging",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "API.2",
+      "title": "Configure authentication",
+      "status": "PASSED",
+      "severity": "Critical",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "API.3",
+      "title": "Implement throttling",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "API.4",
+      "title": "Set up custom domain names",
+      "status": "FAILED",
+      "severity": "Low",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "API.5",
+      "title": "Enable caching",
+      "status": "PASSED",
+      "severity": "Low",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "COG.1",
+      "title": "Configure Cognito user pools",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "COG.2",
+      "title": "Enable MFA",
+      "status": "WARNING",
+      "severity": "Critical",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "COG.3",
+      "title": "Set password policies",
+      "status": "PASSED",
+      "severity": "High",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "COG.4",
+      "title": "Configure identity pools",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 4,
+      "customParameters": "-"
+    },
+    {
+      "id": "COG.5",
+      "title": "Enable advanced security features",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "CDN.1",
+      "title": "Enable CloudFront logging",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "CDN.2",
+      "title": "Configure HTTPS",
+      "status": "PASSED",
+      "severity": "Critical",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "CDN.3",
+      "title": "Set up origin access identity",
+      "status": "WARNING",
+      "severity": "High",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "CDN.4",
+      "title": "Configure caching behaviors",
+      "status": "FAILED",
+      "severity": "Low",
+      "failedChecks": 3,
+      "customParameters": "-"
+    },
+    {
+      "id": "CDN.5",
+      "title": "Implement field-level encryption",
+      "status": "PASSED",
+      "severity": "High",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "SCM.1",
+      "title": "Enable Systems Manager",
+      "status": "FAILED",
+      "severity": "Medium",
+      "failedChecks": 2,
+      "customParameters": "-"
+    },
+    {
+      "id": "SCM.2",
+      "title": "Configure patch management",
+      "status": "WARNING",
+      "severity": "High",
+      "failedChecks": 5,
+      "customParameters": "-"
+    },
+    {
+      "id": "SCM.3",
+      "title": "Set up state manager",
+      "status": "PASSED",
+      "severity": "Medium",
+      "failedChecks": 0,
+      "customParameters": "-"
+    },
+    {
+      "id": "SCM.4",
+      "title": "Enable session manager",
+      "status": "FAILED",
+      "severity": "High",
+      "failedChecks": 1,
+      "customParameters": "-"
+    },
+    {
+      "id": "SCM.5",
+      "title": "Configure parameter store",
+      "status": "WARNING",
+      "severity": "Medium",
+      "failedChecks": 3,
+      "customParameters": "-"
+    }
+  ]

@@ -3,14 +3,6 @@ import { PieChart } from '@mui/x-charts/PieChart';
 import { useDrawingArea } from '@mui/x-charts/hooks';
 import { styled } from '@mui/material/styles';
 
-const severities = ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW'];
-const counts = [3, 23, 32, 0]; // Corresponding to each severity
-
-const data = severities.map((label, index) => ({
-  label,
-  value: counts[index],
-}));
-
 const size = {
   width: 200,
   height: 200,
@@ -32,7 +24,12 @@ function PieCenterLabel({ children }) {
   );
 }
 
-export default function TickPlacementBars() {
+export default function TickPlacementBars({ failedChecks }) {
+  const data = failedChecks.map((item) => ({
+    label: item.severity,
+    value: Number(item.count),
+  }));
+
   return (
     <PieChart series={[{ data, innerRadius: 80 }]} {...size}>
       <PieCenterLabel>Failed Checks</PieCenterLabel>

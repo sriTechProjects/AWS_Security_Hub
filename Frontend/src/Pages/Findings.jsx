@@ -1,23 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiUpload } from "react-icons/fi";
+import axios from 'axios';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import FailedChecks from '../Components/FailedChecks';
 import WorkflowProgress from '../Components/WorkflowProgress';
 import Navbar from '../Components/Navbar';
-import dummyData from './DummyData';
+
 const Findings = () => {
-
-
+  const [data, setData] = useState([]);
   const [selectedSeverity, setSelectedSeverity] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  // Fetch data on component mount
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post('http://localhost:4000/security-hub/api/findings');
+        setData(response.data.findings);
+        console.log(response.data.findings);
+      } catch (err) {
+        setError("Failed to fetch findings.");
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleSeverityChange = (e) => {
     setSelectedSeverity(e.target.value);
   };
 
   const filteredData = selectedSeverity
-    ? dummyData.filter((item) => item.severity === selectedSeverity)
-    : dummyData;
+    ? data.filter((item) => item.severity === selectedSeverity)
+    : data;
 
   const handleExport = () => {
     const doc = new jsPDF();
@@ -30,13 +50,13 @@ const Findings = () => {
     ];
 
     const tableRows = filteredData.map(item => [
-      item.finding,
+      item.title,
       item.severity,
       item.workflowStatus,
       item.region,
-      item.accountId,
-      item.product,
-      item.resource,
+      item.awsAccountId,
+      item.productName,
+      item.resourceId,
       item.complianceStatus,
       item.updatedAt,
     ]);
@@ -63,6 +83,7 @@ const Findings = () => {
               className='bg-white border border-gray-400 rounded-md px-3 py-2 w-full md:w-1/3'
               type="text"
               placeholder='Add filter'
+              onChange={handleSeverityChange}
             />
             <button
               onClick={handleExport}
@@ -90,24 +111,30 @@ const Findings = () => {
                 <div>Updated</div>
               </div>
 
-              {/* Table Rows */}
-              {filteredData.map((item, i) => (
-                <div
-                  key={i}
-                  className="grid grid-cols-10 gap-2 items-center py-2 border-b border-gray-200"
-                >
-                  <div><input type="checkbox" /></div>
-                  <div className="break-words whitespace-normal">{item.finding}</div>
-                  <div><FailedChecks severity={item.severity} /></div>
-                  <div><WorkflowProgress status={item.workflowStatus} /></div>
-                  <div className="break-words whitespace-normal">{item.region}</div>
-                  <div className="break-words whitespace-normal">{item.accountId}</div>
-                  <div className="break-words whitespace-normal">{item.product}</div>
-                  <div className="break-words whitespace-normal">{item.resource}</div>
-                  <div className="break-words whitespace-normal">{item.complianceStatus}</div>
-                  <div className="break-words whitespace-normal">{item.updatedAt}</div>
-                </div>
-              ))}
+              {/* Conditional Rendering */}
+              {loading ? (
+                <div className="text-center py-4 col-span-10">Loading...</div>
+              ) : error ? (
+                <div className="text-center py-4 col-span-10 text-red-600">{error}</div>
+              ) : (
+                filteredData.map((item, i) => (
+                  <div
+                    key={i}
+                    className="grid grid-cols-10 gap-2 items-center py-2 border-b border-gray-200"
+                  >
+                    <div><input type="checkbox" /></div>
+                    <div className="break-words whitespace-normal">{item.title}</div>
+                    <div><FailedChecks severity={item.severity} /></div>
+                    <div><WorkflowProgress status={item.workflowStatus} /></div>
+                    <div className="break-words whitespace-normal">{item.region}</div>
+                    <div className="break-words whitespace-normal">{item.awsAccountId}</div>
+                    <div className="break-words whitespace-normal">{item.productName}</div>
+                    <div className="break-words whitespace-normal">{item.resourceId}</div>
+                    <div className="break-words whitespace-normal">{item.complianceStatus}</div>
+                    <div className="break-words whitespace-normal">{item.updatedAt}</div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>
